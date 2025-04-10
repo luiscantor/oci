@@ -2,9 +2,9 @@
 Este repositorio contiene ejercicios y temas relacionados con Oracle Cloud Infrastructure (OCI), diseñados para ayudarte a comprender y aplicar diferentes configuraciones en la nube. Se actualizará periódicamente con nuevos temas y recursos.
 
 ## Estructura del Repositorio
-* Instancia Publica/ – Configuración y despliegue de instancias accesibles desde internet en OCI.
-* Instancia Privada/ – Creación y administración de instancias privadas dentro de una VCN.
-* Bastion/ – Uso de un Bastion Host para acceder de manera segura a instancias privadas.
+* instancia_publica/ – Configuración y despliegue de instancias accesibles desde internet en OCI.
+* instancia_privada/ – Creación y administración de instancias privadas dentro de una VCN.
+* bastion/ – Uso de un Bastion Host para acceder de manera segura a instancias privadas.
 
 ## Script para Túneles SSH en Bastion
 Este repositorio incluye un script en Bash que establece sesiones SSH en background usando nohup, lo que permite mantener la conexión activa incluso si la terminal se cierra.
