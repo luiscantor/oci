@@ -1,35 +1,40 @@
 # Oracle Cloud Infrastructure Examples
+Este repositorio contiene ejercicios y temas relacionados con Oracle Cloud Infrastructure (OCI), diseñados para ayudarte a comprender y aplicar diferentes configuraciones en la nube. Se actualizará periódicamente con nuevos temas y recursos.
 
-Este repositorio incluye ejercicios y temas relacionados con la nube de Oracle, que pueden servirte como apoyo. 
-Este archivo se actualizará gradualmente a medida que se agreguen más temas e información útil.
+## Estructura del Repositorio
+* Instancia Publica/ – Configuración y despliegue de instancias accesibles desde internet en OCI.
+* Instancia Privada/ – Creación y administración de instancias privadas dentro de una VCN.
+* Bastion/ – Uso de un Bastion Host para acceder de manera segura a instancias privadas.
 
+## Script para Túneles SSH en Bastion
+Este repositorio incluye un script en Bash que establece sesiones SSH en background usando nohup, lo que permite mantener la conexión activa incluso si la terminal se cierra.
 
+### Ubicación del Script
+```
+./bastion/start_bastion_tunnels.sh
+```
 
-# Script
-Script en Bash que ejecutará las sesiones SSH en background usando nohup para evitar que se cierren si cierras la terminal:
-
-- Script: ./bastion/start_bastion_tunnels.sh
-
-# Pasos para Usarlo
-* Guarda el script en un archivo, por ejemplo, start_bastion_tunnels.sh
-* Otórgale permisos de ejecución:
+### Cómo Usarlo
+1. Otorgar permisos de ejecución:
 
 ```
-chmod +x start_bastion_tunnels.sh
+chmod +x ./bastion/start_bastion_tunnels.sh
 ```
-* Ejecútalo:
+2. Ejecutar el script:
 
 ```
 ./start_bastion_tunnels.sh
 ```
 
-# Explicación
-nohup ... & mantiene la conexión en background incluso si cierras la terminal.
+### Explicación
+* nohup ... & mantiene la conexión activa en background, incluso si cierras la terminal.
+* Los logs se almacenan en bastion_tunnels.log.
+* Puedes verificar los procesos en ejecución con:
 
-Los logs se guardan en bastion_tunnels.log.
+  ```
+  ps aux | grep "[s]sh -i id_rsa -N"
+  ```
+* Acceso a servicios:
 
-```
-ps aux | grep "[s]sh -i id_rsa -N"
-```
-El comando anterior muestra los procesos en ejecución.
-Ahora podrás acceder a Jenkins en http://localhost:8080 y Grafana en http://localhost:3000.
+  * Jenkins: http://localhost:8080
+  * Grafana: http://localhost:3000
